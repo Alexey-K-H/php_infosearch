@@ -1,41 +1,44 @@
 <?php
-@$site = $_GET['site'];
-if (isset($site)) {
-    header("Location: https://$site");
+if(@$_POST['site'] != "") {
+    header("Location: https://" . $_POST['site']);
     exit;
-} else { ?>
-    <html lang="ru">
+} else {
+    $list_sites = array("www.yandex.ru", "www.rambler.ru", "www.google.com", "www.yahoo.com", "www.altavista.com");
+    $array_size = count($list_sites);
+    $i = 0;
+    ?>
+
+    <html>
     <head>
-        <meta charset="utf-8">
-        <title> z4-5 </title>
+        <title> z4-5.php </title>
     </head>
+
     <body>
 
-    <form method="GET">
-        <p>
-            Поисковые системы:
-            <label>
-                <select name="site" required>
-                    <?php
-                    $list_sites = array('www.yandex.ru', 'www.rambler.ru', 'www.google.com', 'www.yahoo.com', 'www.altavista.com');
-                    $i = 0;
-                    $size = count($list_sites);
+    <form action = "<?php print $_SERVER['PHP_SELF'] ?>" method="post">
+        <select name="site">
+            <option value = "">Поисковые системы
 
-                    while ($i < $size) {
-                        print "\t<option> $list_sites[$i]</option>\n";
-                        ++$i;
-                    }
-                    ?>
-                </select name="answers[]" required>
-            </label>
-        </p>
-        <p>
-            <input type="submit" value="Перейти">
-        </p>
+    </body>
+    </html>
+
+    <?php
+    while($i < $array_size) {
+        print "<option value = \"$list_sites[$i]\">$list_sites[$i]";
+        $i++;
+    }
+    ?>
+
+    <html>
+    <body>
+
+    </select>
+    <input type="submit" value="Перейти">
     </form>
 
     </body>
     </html>
+
     <?php
 }
 ?>
