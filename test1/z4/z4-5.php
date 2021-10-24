@@ -3,8 +3,8 @@ if(@$_POST['site'] != "") {
     header("Location: https://" . $_POST['site']);
     exit;
 } else {
-    $list_sites = array("www.yandex.ru", "www.rambler.ru", "www.google.com", "www.yahoo.com", "www.altavista.com");
-    $array_size = count($list_sites);
+    $sites = array("www.yandex.ru", "www.rambler.ru", "www.google.com", "www.yahoo.com", "www.altavista.com");
+    $array_size = count($sites);
     $i = 0;
     ?>
 
@@ -24,7 +24,7 @@ if(@$_POST['site'] != "") {
 
     <?php
     while($i < $array_size) {
-        print "<option value = \"$list_sites[$i]\">$list_sites[$i]";
+        print "<option value = \"$sites[$i]\">$sites[$i]";
         $i++;
     }
     ?>
