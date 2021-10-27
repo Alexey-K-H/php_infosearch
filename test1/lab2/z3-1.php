@@ -9,7 +9,7 @@ $i = 1;
 $color = "silver";
 
 print "<table style='border-collapse: separate;'>\n";
-while ($i < 10){
+while ($i <= 10){
     $j = 1;
     print "<tr>\n";
 
