@@ -37,12 +37,14 @@ where odate = '03-OCT-90';
 select o.onum, ocs.cname, ocs.sname, ocs.city
 from ord o
          left join
-     (select o2.onum, c.cname, s.sname, s.city
-      from ord o2
-               left join cust c on o2.cnum = c.cnum
-               inner join sal s on c.snum = s.snum
-      where s.city = 'London'
-         or 'Rome'
+     (
+         #Покупатели, продавцы которых в Лондоне или Риме
+         select o2.onum, c.cname, s.sname, s.city
+         from ord o2
+                  left join cust c on o2.cnum = c.cnum
+                  inner join sal s on c.snum = s.snum
+         where s.city = 'London'
+            or 'Rome'
      ) as ocs on o.onum = ocs.onum
 order by o.onum;
 #17
