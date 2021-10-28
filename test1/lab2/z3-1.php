@@ -6,7 +6,8 @@
 <body>
 <?php
 $i = 1;
-$color = "silver";
+#Цвет ячеек главной диагонали
+$color = "grey";
 
 print "<table style='border-collapse: separate;'>\n";
 while ($i <= 10){
