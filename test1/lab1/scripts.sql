@@ -29,7 +29,7 @@ select MIN(cname) as name from cust where cname like '%s';
 #14
 select AVG(comm), city from sal group by city;
 #15
-select onum, amt * 0.8 as awtEUR, s.sname, s.comm
+select onum, amt * 0.8 as awtEUR, s.sname, s.comm * ord.amt as comm
 from ord
          inner join sal s on ord.snum = s.snum
 where odate = '03-OCT-90';
