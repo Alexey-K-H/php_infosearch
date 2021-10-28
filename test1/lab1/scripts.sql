@@ -10,9 +10,9 @@ select distinct snum from ord;
 select sname, city from sal where city='London' and comm > 0.11;
 #6
 select * from cust where rating<=200 and city not like 'Rome';
-#7
+#7.a
 select * from ord where odate='03-OCT-90' or odate='05-OCT-90';
-
+#7.b
 select * from ord where odate!='04-OCT-90' and odate!='06-OCT-90';
 #8
 select * from cust where cname rlike '^[A-G]';
